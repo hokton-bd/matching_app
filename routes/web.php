@@ -26,3 +26,7 @@ Route::get('index', function() {
 });
 
 Route::get('/signup', 'SubjectController@get_subjects'); 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
