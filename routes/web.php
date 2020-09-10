@@ -25,7 +25,13 @@ Route::get('index', function() {
     return view('index');
 });
 
-Route::get('/signup', 'SubjectController@get_subjects'); 
+Route::get('/signup', 'SubjectController@get_subjects');
+Route::get('/signup', function() {
+    return view('signup');
+});
+
+Route::post('signup/student', 'SignupController@signup_student');
+Route::post('signup/teacher', 'SignupController@signup_teacher');
 
 Auth::routes();
 

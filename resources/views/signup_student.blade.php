@@ -4,46 +4,36 @@
 @section('content')
 @component('components.navbar')
 @endcomponent
-@component('components.inner_head', ['title' => 'REGISTER'])
+@component('components.inner_head', ['title' => 'REGISTER AS STUDENTS'])
 @endcomponent
-<!-- section -->
-<div class="section padding_layout_1" id="register">
-  <div class="container">
+<div id="register-as-student" class="py-5">
+        
+            <h3 class="text-center">生徒として登録</h3>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="full">
-          <div class="main_heading text_align_center">
-            <h2>会員登録</h2>
-          </div>
+        <div class="row">
+            <form action="{{ route('register') }}" method="POST" class="w-50 mx-auto">
+            @CSRF
+                <input type="hidden" name="status" value="S">
+                <input type="text" name="name" placeholder="お名前（ニックネーム可）" class="form-control mb-2" required>
+                <input type="email" name="email" placeholder="メールアドレス" class="form-control mb-2" required>
+                <input type="password" name="password" placeholder="パスワード" class="form-control mb-2" required>
+                <select name="grade" id="" class="form-control mb-4" required>
+                    <option value="1">中学1年生</option>
+                    <option value="2">中学2年生</option>
+                    <option value="3">中学3年生</option>
+                    <option value="4">高校1年生</option>
+                    <option value="5">高校2年生</option>
+                    <option value="6">高校3年生</option>
+                </select>
+
+                <button type="submit" class="form-control btn btn-primary mx-auto w-25 d-block" name="register-as-student">登録</button>
+            </form>
         </div>
-      </div>
-    </div><!-- /row -->
 
-    <div class="card-deck">
-
-        <div class="card">
-            <img class="card-img-top" src="images/hero-view3.jpg" alt="">
-            <div class="card-body">
-                <a href="signup/students" class="register-btn card-title btn btn-primary mx-auto d-block" data-target="#register-as-student">生徒として登録する</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img class="card-img-top" src="images/teacher-img.jpg" alt="">
-            <div class="card-body">
-                <a href="signup/teacher" class="register-btn card-title btn btn-success d-block mx-auto" data-target="#register-as-teacher">先生として登録する</a>
-            </div>
-        </div>
-    </div><!-- /card-deck -->                
-
-</div><!-- /container -->
-</div><!-- end section -->
+</div><!-- /row -->
 
 
-<div id="register-as-teacher" class="form-block register-modal modal-block">
-    <div class="modal-bg"></div>
-    <div class="register-block col-6">
+<div id="register-as-teacher" class="py-5">
         
         <h3 class="text-center">先生として登録</h3>
 
@@ -72,4 +62,6 @@
 
     </div><!-- /as-teacher -->
 </div><!-- /row -->
+
+
 @endsection
