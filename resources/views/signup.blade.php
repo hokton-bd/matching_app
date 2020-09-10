@@ -15,6 +15,9 @@
         <div class="full">
           <div class="main_heading text_align_center">
             <h2>会員登録</h2>
+            @error('email')
+                  <strong class="text-danger">このメールアドレスはすでに使われています</strong>
+            @enderror
           </div>
         </div>
       </div>
@@ -61,7 +64,6 @@
         <option value="5">高校2年生</option>
         <option value="6">高校3年生</option>
     </select>
-
     <button type="submit" class="form-control btn btn-primary mx-auto w-25 d-block" name="register-as-student">登録</button>
 </form>
 
@@ -75,6 +77,7 @@
 <h3 class="text-center">先生として登録</h3>
 
 <form action="signup/teacher" method="post" class="register-form">
+  @csrf
     <input type="hidden" name="status" value="T">
     <input type="text" name="name" placeholder="名前（ニックネーム可）" class="form-control mb-2" required>
     <input type="email" name="email" placeholder="メールアドレス" class="form-control mb-2" required>
@@ -87,6 +90,9 @@
     </select>
 
     <p>教えられる教科</p>
+    @foreach($subjects as $subject)
+      <label for="{{ $subject->id }}"><input type="radio" name="teacher_subjects" id="{{ $subject->id }}" value="{{ $subject->id }}"> {{ $subject->name }} </label>
+    @endforeach
 
     <button type="submit" class="form-control btn btn-primary mx-auto w-25 d-block" name="register-as-teacher">登録</button>
 </form>

@@ -11,7 +11,7 @@ class SubjectController extends Controller
     public function get_subjects() {
         
         $subjects = Subject::all();
-        return view('register', compact('subjects'));
+        return view('signup', compact('subjects'));
 
     }
 

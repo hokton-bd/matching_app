@@ -3,14 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Login;
 
 class Teacher extends Model
 {
     
     public function login() {
 
-        $this->hasOne('App\Login');
+       return $this->hasOne('App\Login');
+       return $this->hasMany('App\Teacher_subjects');
 
     }
 
