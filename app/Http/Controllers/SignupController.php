@@ -36,7 +36,9 @@ class SignupController extends Controller
         $student->grade = $request->grade;
         $student->save();
 
-        return view('student_dashboard');
+        $info = Login::find($login_id)->student;
+
+        return view('student_dashboard', ['info' => $info]);
 
     }
     

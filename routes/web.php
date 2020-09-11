@@ -36,3 +36,15 @@ Route::post('signup/teacher', 'SignupController@signup_teacher');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/user/login', 'LoginController@login');
+
+Route::get('/student_dashboard', function() {
+    return view('student_dashboard');
+
+})->name('student_dashboard');
+
+Route::get('/teacher_dashboard', function() {
+    return view('teacher_dashboard');
+
+})->name('teacher_dashboard');

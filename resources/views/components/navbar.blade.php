@@ -40,12 +40,13 @@
 <!-- end header -->
 <div class="login-modal modal-block">
   <div class="modal-bg"></div>
-  <form method="" action="" class="login-modal-content">
+  <form method="post" action="user/login" class="login-modal-content">
+    @csrf
     <span class="modal-closer"><i class="fas fa-times"></i></span>
     <input type="email" name="email" placeholder="メールアドレス" class="form-control mb-2">
-    <input type="password" name="pass" placeholder="パスワード" class="form-control mb-3">
+    <input type="password" name="password" placeholder="パスワード" class="form-control mb-3">
 
-    <input type="submit" name="submit" value="ログイン" class="form-control btn btn-primary w-25 d-block mx-auto mb-2">
+    <input type="submit" name="login" value="ログイン" class="form-control btn btn-primary w-25 d-block mx-auto mb-2">
     <span class="or d-block mx-auto mb-2 text-center">または</span>
     <a href="signup" class="register-btn d-block btn btn-success w-25 mx-auto">初めてのかたはこちら</a>
 

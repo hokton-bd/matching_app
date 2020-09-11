@@ -7,9 +7,9 @@
         <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
         <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
           <ul>
-            <li data-index="rs-1812" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="images/hero-view1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="自分の好きなときに" data-description="">
+            <li data-index="rs-1812" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="{{asset('images/hero-view1.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="自分の好きなときに" data-description="">
               <!-- MAIN IMAGE -->
-              <img src="images/hero-view1.jpg"  alt="#"  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+              <img src="{{asset('images/hero-view1.jpg')}}"  alt="#"  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
               <!-- LAYERS -->
               <!-- LAYER NR. BG -->
               <div class="tp-caption tp-shape tp-shapewrapper   rs-parallaxlevel-0" 
@@ -83,9 +83,9 @@
                               data-responsive_offset="on" 
                               style="z-index: 7; white-space: nowrap;"></div>
             </li>
-            <li data-index="rs-181" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="images/hero-view2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="低価格で" data-description="">
+            <li data-index="rs-181" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="{{asset('images/hero-view2.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="低価格で" data-description="">
               <!-- MAIN IMAGE -->
-              <img src="images/hero-view2.jpg"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+              <img src="{{asset('images/hero-view2.jpg')}}"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
               <!-- LAYERS -->
               <!-- LAYER NR. BG -->
               <div class="tp-caption tp-shape tp-shapewrapper   rs-parallaxlevel-0" 
@@ -159,9 +159,9 @@
                               data-responsive_offset="on" 
                               style="z-index: 7; white-space: nowrap;"></div>
             </li>
-            <li data-index="rs-18" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="images/hero-view3.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="オンライン完結の家庭教師" data-description="">
+            <li data-index="rs-18" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="{{asset('images/hero-view3.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="オンライン完結の家庭教師" data-description="">
               <!-- MAIN IMAGE -->
-              <img src="images/hero-view3.jpg"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+              <img src="{{asset('images/hero-view3.jpg')}}"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
               <!-- LAYERS -->
               <!-- LAYER NR. BG -->
               <div class="tp-caption tp-shape tp-shapewrapper   rs-parallaxlevel-0" 
