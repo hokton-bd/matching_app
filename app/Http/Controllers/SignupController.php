@@ -40,7 +40,7 @@ class SignupController extends Controller
         session(['login_id' => $login_id]);
         session(['name' => $student->name]);
 
-        return redirect()->route('student_dashboard');
+        return redirect()->route('student/dashboard');
 
     }
     
@@ -77,7 +77,7 @@ class SignupController extends Controller
         session(['login_id' => $login_id]);
         session(['name' => $teacher->name]);
 
-        return redirect()->route('teacher_dashboard');
+        return redirect()->route('teacher/dashboard');
 
     }
 

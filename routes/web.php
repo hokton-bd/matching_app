@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckLogin;
+use App\Http\Middleware\CheckStudent;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +21,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
     return view('index');
-});
+})->name('index');
 
 Route::get('index', function() {
     return view('index');
-})->name('index');
+});
 
 Route::get('/signup', 'SubjectController@get_subjects');
 // Route::get('/signup', function() {
@@ -37,16 +39,51 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/user/login', 'LoginController@login');
+Route::post('/user/login', 'LoginController@login')->name('user.login');
 
-Route::get('/student_dashboard', function() {
-    return view('student_dashboard');
 
-})->name('student_dashboard');
+Route::get('logout', 'LogoutController@logout')->name('logout');
 
-Route::get('/teacher_dashboard', function() {
-    return view('teacher_dashboard');
 
-})->name('teacher_dashboard');
+Route::middleware([CheckLogin::class])->group(function() {
 
-Route::get('logout', 'LogoutController@logout');
+
+    Route::middleware([CheckStudent::class])->group(function() {
+
+        Route::get('/student/dashboard', function() {
+            return view('student.dashboard');
+            
+        })->name('student/dashboard');
+
+    });
+
+    Route::middleware('check.teacher')->group(function() {
+
+        Route::get('/teacher/dashboard', function() {
+            return view('teacher.dashboard');
+            
+        })->name('teacher/dashboard');
+    
+        Route::get('/teacher/schedule', function() {
+        
+            return view('teacher/schedule');
+            
+        })->name('teacher/schedule');
+    
+        Route::get('/teacher/profile', function() {
+        
+            return view('teacher/profile');
+            
+        })->name('teacher/profile');
+
+    });
+    
+
+    Route::get('contact', function() {
+
+        return view('contact');
+
+    })->name('contact');
+
+
+});

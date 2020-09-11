@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- site icons -->
-    <link rel="icon" href="images/fevicon/fevicon.png" type="image/gif" />
+    <link rel="icon" href="{{asset('images/fevicon/fevicon.png')}}" type="image/gif" />
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">

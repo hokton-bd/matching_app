@@ -25,23 +25,23 @@ class LoginController extends Controller
     
                 if($user->status == 'S') {
     
-                    $info = DB::table('students')->find($user->id);
+                    $info = DB::table('students')->where('login_id', $user->id)->first();
                     session(['name' => $info->name]);
     
-                    return redirect()->route('student_dashboard');
+                    return redirect()->route('student/dashboard');
     
                 } else if($user->status == 'T') {
     
-                    $info = DB::table('teachers')->find($user->id);
+                    $info = DB::table('teachers')->where('login_id', $user->id)->first();
                     session(['name' => $info->name]);
     
-                    return redirect()->route('teacher_dashboard');
+                    return redirect()->route('teacher/dashboard');
     
                 }
         
             } else {
         
-                    return redirect('index');
+                    return redirect()->route('index');
         
             }
 

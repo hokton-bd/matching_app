@@ -27,10 +27,4 @@ class HomeController extends Controller
     }
 
 
-    public function student_dashboard() [
-
-        return view('student_dashboard');
-
-    ]
-
 }
