@@ -3,9 +3,9 @@
 @include('layouts.footer')
 @section('content')
 
-@component('components.navbar')
+@component('components.student_navbar')
 @endcomponent
-@component('components.inner_head', ['title' => 'DASHBOARD'])
+@component('components.inner_head', ['title' => 'ホーム'])
 @endcomponent
 <!-- section -->
 <div class="section padding_layout_1" id="register">

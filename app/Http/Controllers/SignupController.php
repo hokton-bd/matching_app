@@ -37,8 +37,10 @@ class SignupController extends Controller
         $student->save();
 
         $info = Login::find($login_id)->student;
+        session(['login_id' => $login_id]);
+        session(['name' => $student->name]);
 
-        return view('student_dashboard', ['info' => $info]);
+        return redirect()->route('student_dashboard');
 
     }
     
@@ -72,7 +74,10 @@ class SignupController extends Controller
 
         $ts->save();
 
-        return view('teacher_dashboard');
+        session(['login_id' => $login_id]);
+        session(['name' => $teacher->name]);
+
+        return redirect()->route('teacher_dashboard');
 
     }
 

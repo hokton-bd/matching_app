@@ -3,7 +3,7 @@
 @include('layouts.footer')
 @section('content')
 
-@component('components.navbar')
+@component('components.teacher_navbar')
 @endcomponent
 @component('components.inner_head', ['title' => 'DASHBOARD'])
 @endcomponent
@@ -15,7 +15,7 @@
       <div class="col-md-12">
         <div class="full">
           <div class="main_heading text_align_center">
-            <h2>こんにちは{{ $info->name }}さん</h2>
+            <h2>こんにちは{{ Session::get('name') }}さん</h2>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ Route::get('/', function() {
 
 Route::get('index', function() {
     return view('index');
-});
+})->name('index');
 
 Route::get('/signup', 'SubjectController@get_subjects');
 // Route::get('/signup', function() {
@@ -48,3 +48,5 @@ Route::get('/teacher_dashboard', function() {
     return view('teacher_dashboard');
 
 })->name('teacher_dashboard');
+
+Route::get('logout', 'LogoutController@logout');
