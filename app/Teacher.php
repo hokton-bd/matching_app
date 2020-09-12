@@ -20,5 +20,11 @@ class Teacher extends Model
 
     }
 
+    public function available_dates() {
+
+        return $this->hasMany('App\AvailableDate');
+
+    }
+
 
 }

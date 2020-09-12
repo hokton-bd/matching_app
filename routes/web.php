@@ -76,6 +76,8 @@ Route::middleware([CheckLogin::class])->group(function() {
             
         })->name('teacher/profile');
 
+        Route::post('shift/add', 'ShiftController@add_available_date')->name('shift.add');
+
     });
     
 
