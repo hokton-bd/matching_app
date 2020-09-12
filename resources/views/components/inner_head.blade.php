@@ -6,7 +6,7 @@
         <div class="full">
           <div class="title-holder">
             <div class="title-holder-cell text-left">
-              <h1 class="page-title">{{$title}}</h1>
+              <h1 class="page-title">{{ Session::get('name') }}さん</h1>
             </div>
           </div>
         </div>
