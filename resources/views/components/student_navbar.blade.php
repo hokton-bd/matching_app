@@ -28,7 +28,7 @@
           <!-- menu end -->
         </div><!--/col-lg-9-->
 
-        <a href="logout" id="iso-login-btn" class="header-login bg-primary login-btn">ログアウト</a>
+        <a href="{{route('logout')}}" id="iso-login-btn" class="header-login bg-primary login-btn">ログアウト</a>
 
       </div><!--/row-->
     </div><!--container-->

@@ -16,7 +16,12 @@ class TeachersController extends Controller
         $after = date('Y-m-d', $after);
 
         $teacher_id = AvailableDate::where('date', '<=', $after)->value('teacher_id');
-        $available_teachers = Teacher::where('id', '=', $teacher_id)->get();
+        $available_teachers = DB::table('teachers')
+                                    ->join('subjects', 'teachers.subject_id', '=', 'subjects.id')
+                                    ->join('available_dates', 'teachers.id', '=', 'available_dates.teacher_id')
+                                    ->where('teachers.id', '=', $teacher_id)
+                                    ->get();
+
 
         return view('/student/reserve', ['available_teachers' => $available_teachers]);
 

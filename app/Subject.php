@@ -13,5 +13,11 @@ class Subject extends Model
 
     }
 
+    public function teacher() {
+
+        return $this->hasOne('App\Teacher');
+
+    }
+
 
 }
