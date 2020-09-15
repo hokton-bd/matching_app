@@ -5,7 +5,7 @@
 
 @component('components.student_navbar')
 @endcomponent
-@component('components.inner_head', ['title' => 'ホーム'])
+@component('components.inner_head')
 @endcomponent
 <!-- section -->
 <div class="section padding_layout_1" id="register">
@@ -15,7 +15,7 @@
       <div class="col-md-12">
         <div class="full">
           <div class="main_heading text_align_center">
-            <h2>こんにちは{{ Session::get('name') }}さん</h2>
+            <h2>ホーム</h2>
           </div>
         </div>
       </div>

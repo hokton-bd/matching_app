@@ -55,6 +55,11 @@ Route::middleware([CheckLogin::class])->group(function() {
             
         })->name('student/dashboard');
 
+        Route::get('classes/reserve', 'TeachersController@get_av_teachers')->name('classes/reserve');
+
+        // Route::get('get/teachers/{{ $date }}', 'ClassesController@get_av_teachers');
+        // Route::post('classes/getdate', 'AjaxController@index');
+
     });
 
     Route::middleware('check.teacher')->group(function() {

@@ -29,4 +29,5 @@
     <script src="{{asset('revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
     <script src="{{asset('revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{asset('js/ajax.js')}}"></script>
 @endsection

@@ -88,3 +88,10 @@ $('.register-btn').each(function() {
     });
 
 });
+
+// $('#date-select').on('change', function() {
+
+//     var selected_date = $(this).val();
+//     window.location = '../get/teachers/' + selected_date;
+
+// });
