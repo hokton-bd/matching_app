@@ -57,8 +57,9 @@ Route::middleware([CheckLogin::class])->group(function() {
 
         Route::get('classes/reserve', 'TeachersController@get_av_teachers')->name('classes/reserve');
 
-        // Route::get('get/teachers/{{ $date }}', 'ClassesController@get_av_teachers');
-        // Route::post('classes/getdate', 'AjaxController@index');
+        Route::get('classes/paycheck/{id}', 'TeachersController@show');
+
+        Route::post('/classes/charge/{id}', 'ChargeController@charge');
 
     });
 
@@ -81,7 +82,7 @@ Route::middleware([CheckLogin::class])->group(function() {
             
         })->name('teacher/profile');
 
-        Route::post('shift/add', 'ShiftController@add_available_date')->name('shift.add');
+        Route::post('shift/add', 'ShiftController@add_lecture')->name('shift.add');
 
     });
     

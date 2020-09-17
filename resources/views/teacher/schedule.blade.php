@@ -46,11 +46,7 @@
                                         <option value="{{ $i }}">{{ $i }}:00</option>
                                     @endfor
                                 </select>
-                                <select name="end_time" id="" class="form-control w-50 d-inline-block">
-                                    @for($i = 10; $i < 19; $i ++)
-                                        <option value="{{ $i }}">{{ $i }}:00</option>
-                                    @endfor
-                                </select>
+                                ～  1時間
                             </div>                            
                     </div><!-- body -->
                     <div class="modal-footer">

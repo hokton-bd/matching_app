@@ -25,9 +25,9 @@ class Teacher extends Model
 
     }
 
-    public function available_dates() {
+    public function lectures() {
 
-        return $this->hasMany('App\AvailableDate');
+        return $this->hasMany('App\Lecture');
 
     }
 
