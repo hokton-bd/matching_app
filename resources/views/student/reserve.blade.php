@@ -28,9 +28,9 @@
         @foreach($available_teachers as $teacher)
         <li class="horizontal-item">
           <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-flag-usa mr-1 fa-fw"></i>{{$teacher->name}}</p>
+            <p class="item-text text-white"><i class="fas fa-flag-usa mr-1 fa-fw"></i>{{$teacher->subject_name}}</p>
             <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>{{$teacher->date}}</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-fw"></i>{{$teacher->subject_name}}</p>
+            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-fw"></i>{{$teacher->name}}</p>
           </div>
         </li>
         @endforeach
