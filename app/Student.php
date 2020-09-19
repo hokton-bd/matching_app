@@ -18,4 +18,10 @@ class Student extends Model
 
     }
 
+    public function lectures() {
+
+        return $this->hasMany('App\Lecture', 'student_id');
+
+    }
+
 }

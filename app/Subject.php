@@ -19,5 +19,11 @@ class Subject extends Model
 
     }
 
+    public function lectures() {
+
+        return $this->hasMany('App\Lecture');
+
+    }
+
 
 }

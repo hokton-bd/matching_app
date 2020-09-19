@@ -50,10 +50,7 @@ Route::middleware([CheckLogin::class])->group(function() {
 
     Route::middleware([CheckStudent::class])->group(function() {
 
-        Route::get('/student/dashboard', function() {
-            return view('student.dashboard');
-            
-        })->name('student/dashboard');
+        Route::get('/student/dashboard', 'ClassesController@get_reserved')->name('student/dashboard');
 
         Route::get('classes/reserve', 'TeachersController@get_av_teachers')->name('classes/reserve');
 

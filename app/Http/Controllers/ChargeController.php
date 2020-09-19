@@ -41,7 +41,7 @@ class ChargeController extends Controller
 
         $lecture = Lecture::find($id);
         $lecture->status = 'R';
-        $student_id = Student::find($request->session()->get('login_id'));
+        $student_id = Student::find($request->session()->get('login_id'))->value('id');
         $lecture->student_id = $student_id;
         $lecture->save();
 
