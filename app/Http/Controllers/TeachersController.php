@@ -31,12 +31,6 @@ class TeachersController extends Controller
 
     public function show($id) {
 
-        // $lecture_info = DB::table('lectures')
-        //                     ->join('teachers', 'teachers.id', '=', 'lectures.teacher_id')
-        //                     ->join('subjects', 'subjects.id', '=', 'teachers.subject_id')
-        //                     ->where('lectures.id', '=', $id)
-        //                     ->first();
-
         $lecture_info = Lecture::find($id);
         $teacher_id = $lecture_info->teacher_id;
         $teacher = Teacher::find($teacher_id);
@@ -46,6 +40,23 @@ class TeachersController extends Controller
  
         return view('student.paycheck', ['lecture_info' => $lecture_info, 'teacher_name' => $name, 'subject' => $subject]);
                             
+
+    }
+
+    public function showComingClasses(Request $request) {
+
+        $teacher_id = Teacher::where('login_id', '=', $request->session()->get('login_id'))->value('id');
+        $lectures = DB::table('lectures')
+                        ->join('students', 'students.id', '=', 'lectures.student_id')
+                        ->where('lectures.teacher_id', '=', $teacher_id)
+                        ->where('lectures.date', '>=', date('Y-m-d'))
+                        ->where('lectures.status', '=', 'R')
+                        ->select('lectures.*', 'students.name')
+                        ->orderBy('lectures.date', 'desc')
+                        ->get();
+
+        return view('teacher.dashboard', ['coming_lectures' => $lectures]);
+
 
     }
 

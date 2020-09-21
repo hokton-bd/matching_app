@@ -58,14 +58,13 @@ Route::middleware([CheckLogin::class])->group(function() {
 
         Route::post('/classes/charge/{id}', 'ChargeController@charge');
 
+        Route::get('student/profile', 'StudentController@show')->name('student.profile');
+
     });
 
     Route::middleware('check.teacher')->group(function() {
 
-        Route::get('/teacher/dashboard', function() {
-            return view('teacher.dashboard');
-            
-        })->name('teacher/dashboard');
+        Route::get('/teacher/dashboard', 'TeachersController@showComingClasses')->name('teacher/dashboard');
     
         Route::get('/teacher/schedule', function() {
         

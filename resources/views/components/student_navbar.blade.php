@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
           <!-- logo start -->
-          <div class="logo"> <a href="index"><img src="{{ asset('images/logos/logo.png') }}" alt="logo" /></a> </div>
+          <div class="logo"> <a href="{{ route('student/dashboard') }}"><img src="{{ asset('images/logos/logo.png') }}" alt="logo" /></a> </div>
           <!-- logo end -->
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">

@@ -22,87 +22,21 @@
     </div><!-- /row -->
 
     <div class="coming-classes mb-5">
-      <h5>予約した授業</h5>
+      <h5>次の授業</h5>
       <ul class="horizontal-list">
-        <li class="horizontal-item">
-          <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-flag-usa mr-1 fa-fw"></i>英語</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-fw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-superscript mr-1 fa-fw"></i>数学</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-flask mr-1 fa-fw"></i>化学</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-history mr-1 fa-fw"></i>歴史</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-book mr-1 fa-faw"></i>国語</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
+
+        @foreach($coming_lectures as $item)
+          <li class="horizontal-item">
+            <div class="item-contents">
+              <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>日:<?= substr($item->date, 5);?></p>
+              <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>時間: {{$item->start_time}}:00 - {{$item->end_time}}:00 </p>
+              <p class="item-text text-white"><i class="fas fa-user mr-1 fa-fw"></i>生徒: {{$item->name}}</p>
+            </div>
+          </li>
+        @endforeach
+
       </ul>
     </div><!-- /coming-classes -->
-
-    <div class="past-classes">
-    <h5>今まで受けた授業</h5>
-      <ul class="horizontal-list">
-      <li class="horizontal-item">
-          <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-flag-usa mr-1 fa-fw"></i>英語</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-fw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-superscript mr-1 fa-fw"></i>数学</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-flask mr-1 fa-fw"></i>化学</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-history mr-1 fa-fw"></i>歴史</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
-        <li class="horizontal-item">
-        <div class="item-contents">
-            <p class="item-text text-white"><i class="fas fa-book mr-1 fa-faw"></i>国語</p>
-            <p class="item-text text-white"><i class="far fa-calendar-alt mr-1 fa-fw"></i>9月2日15：00～</p>
-            <p class="item-text text-white"><i class="fas fa-chalkboard-teacher mr-1 fa-faw"></i>鈴木松雄</p>
-          </div>
-        </li>
-      </ul>
-    </div><!-- /past-classes -->
-
 
 </div>
 </div>
