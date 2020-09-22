@@ -19,6 +19,7 @@ class ClassesController extends Controller
                             ->join('subjects', 'subjects.id', '=', 'lectures.subject_id')
                             ->where('lectures.student_id', '=', $student_id)
                             ->where('lectures.status', '=', 'R')
+                            ->where('lectures.date', '>=', date('Y-m-d'))
                             ->select('lectures.*', 'teachers.name', 'subjects.subject_name')
                             ->orderBy('lectures.date', 'desc')
                             ->get();
