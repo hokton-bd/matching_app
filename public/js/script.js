@@ -89,9 +89,19 @@ $('.register-btn').each(function() {
 
 });
 
-// $('#date-select').on('change', function() {
+function previewFile(input){
+    var file = $("input[type=file]").get(0).files[0];
 
-//     var selected_date = $(this).val();
-//     window.location = '../get/teachers/' + selected_date;
+    if(file){
+        var reader = new FileReader();
 
-// });
+        reader.onload = function(){
+            $("#previewImg").attr("src", reader.result);
+        }
+
+        reader.readAsDataURL(file);
+
+        $('.image-change-btn').addClass('selected');
+
+    }
+}

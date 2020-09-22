@@ -12,11 +12,12 @@ class StudentController extends Controller
     public function show(Request $request) {
 
         $info = DB::table('logins')
-                    ->join('students.login_id', '=', 'logins.id')
+                    ->join('students', 'students.login_id', '=', 'logins.id')
                     ->where('logins.id', '=', $request->session()->get('login_id'))
-                    ->get();
+                    ->first();
+        
 
-        return view('student.profile', compact($info) );
+        return view('student.profile', ['info' => $info] );
 
     }
 

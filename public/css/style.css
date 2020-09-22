@@ -4961,3 +4961,41 @@ footer ul.social_icons {
 	color: white;
 	border: none;
 }
+
+input[type="file"] {
+
+	display: none;
+
+}
+
+.image-change-btn {
+
+	background: #007bff;
+	color: white;
+	font-size: 0.8rem;
+	padding: 6px 12px;
+	border-radius: 4px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+
+}
+
+.image-change-btn::after {
+
+	content: "選択されていません";
+	color: black;
+	font-size: 14px;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	right: -140px;
+	top: calc(50% - 10px);
+
+}
+
+.selected::after {
+
+	content:'';
+
+}
