@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Login;
 use Illuminate\Support\Facades\DB;
-use App\Student;
 use Illuminate\Support\Facades\Storage;
+use App\Login;
+use App\Student;
+use Illuminate\Support\Facades\File;
 
 class StudentController extends Controller
 {
@@ -17,24 +18,8 @@ class StudentController extends Controller
                     ->join('students', 'students.login_id', '=', 'logins.id')
                     ->where('logins.id', '=', $request->session()->get('login_id'))
                     ->first();
-        
-        if(Storage::url('images/students/user_'.$info->id.'.png')) {
 
-            $link = Storage::url('images/students/user_'.$info->id.'.png');
-
-        } else if(Storage::url('images/students/user_'.$info->id.'.jpg')) {
-
-            $link = Storage::url('images/students/user_'.$info->id.'.jpg');
-
-        } else if(Storage::url('images/students/user_'.$info->id.'.jpeg')) {
-
-            $link = Storage::url('images/students/user_'.$info->id.'.jpeg');
-
-        } else {
-
-            $link = Storage::url('images/students/user-dummy.png');
-
-        }
+        $link = storage::url('/images/students/'.$info->image);
 
         return view('student.profile', ['info' => $info, 'image_link' => $link] );
 
@@ -78,7 +63,7 @@ class StudentController extends Controller
         }
     
     return redirect()->route('student.profile');
-    
+
     }
 
 }

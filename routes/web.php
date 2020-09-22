@@ -74,13 +74,11 @@ Route::middleware([CheckLogin::class])->group(function() {
             
         })->name('teacher/schedule');
     
-        Route::get('/teacher/profile', function() {
-        
-            return view('teacher/profile');
-            
-        })->name('teacher/profile');
+        Route::get('/teacher/profile', 'TeachersController@showProfile')->name('teacher.profile');
 
         Route::post('shift/add', 'ShiftController@add_lecture')->name('shift.add');
+
+        Route::post('teacher/profile/update', 'TeachersController@update')->name('teacher.profile.update');
 
     });
     

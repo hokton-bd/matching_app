@@ -17,7 +17,7 @@
               <ul class="first-ul">
                 <li> <a class="" href="{{route('teacher/dashboard')}}">ホーム</a></li>
                 <li> <a class="" href="{{route('teacher/schedule')}}">スケジュール</a></li>
-                <li> <a href="{{route('teacher/profile')}}">プロフィール</a></li>
+                <li> <a href="{{route('teacher.profile')}}">プロフィール</a></li>
                 <li> <a href="{{route('contact')}}">お問い合わせ</a></li>
                 <li> <a href="{{ route('logout') }}" id="nav-login-btn" class="login-btn bg-primary header-login">ログアウト</a></li>
               </ul>
