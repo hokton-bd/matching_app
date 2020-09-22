@@ -99,7 +99,7 @@ function previewFile(input){
             $("#previewImg").attr("src", reader.result);
         }
 
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(file);        
 
         $('.image-change-btn').addClass('selected');
 

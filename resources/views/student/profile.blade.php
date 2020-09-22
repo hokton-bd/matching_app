@@ -21,12 +21,13 @@
       </div>
     </div><!-- /row -->
 
-    <form action="" method="post">
+    <form action="{{route('student.profile.update')}}" method="post" enctype="multipart/form-data">
+      @csrf
 
     <div class="row mb-3">
       <div class="image mx-auto w-75">
 
-        <img src="<?= asset('images/students/'.$info->image); ?>" alt="" id="previewImg" class="w-100">
+        <img src="{{ url($image_link) }}" alt="" id="previewImg" class="w-100">
 
       </div>
     </div>

@@ -60,6 +60,8 @@ Route::middleware([CheckLogin::class])->group(function() {
 
         Route::get('student/profile', 'StudentController@show')->name('student.profile');
 
+        Route::post('student/profile/update', 'StudentController@update')->name('student.profile.update');
+
     });
 
     Route::middleware('check.teacher')->group(function() {
