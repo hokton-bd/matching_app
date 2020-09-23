@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImageColumnToTeachersTable extends Migration
+class AddSubjectIdToTeachersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AddImageColumnToTeachersTable extends Migration
     public function up()
     {
         Schema::table('teachers', function (Blueprint $table) {
-            
-            $table->string('image', 255)->nullable()->default('user-dummy.png');
-
+            $table->foreignId('subject_id')->constrained('subjects');
         });
     }
 
@@ -28,9 +26,7 @@ class AddImageColumnToTeachersTable extends Migration
     public function down()
     {
         Schema::table('teachers', function (Blueprint $table) {
-            
-            $table->dropColumn('image');
-
+            $table->dropColumn('subject_id');
         });
     }
 }

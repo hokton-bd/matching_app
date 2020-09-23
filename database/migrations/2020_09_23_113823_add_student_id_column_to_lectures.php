@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImagePathColumnToStudentsTable extends Migration
+class AddStudentIdColumnToLectures extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class AddImagePathColumnToStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('students', function (Blueprint $table) {
-            
-            $table->string('image', 255)->nullable()->default('user-dummy.png');
-
+        Schema::table('lectures', function (Blueprint $table) {
+            $table->foreignId('student_id')->constrained('students');
         });
     }
 
@@ -27,10 +25,8 @@ class AddImagePathColumnToStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
-            
-            $table->dropColumn('image');
-
+        Schema::table('lectures', function (Blueprint $table) {
+            $table->dropColumn('student_id');
         });
     }
 }

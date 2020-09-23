@@ -20,7 +20,6 @@ class CheckTeacher
 
             return redirect()->route('student/dashboard');
 
-
         } else {
 
             return $next($request);

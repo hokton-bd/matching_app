@@ -17,6 +17,7 @@ class CreateLoginsTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('status', 1);
             $table->timestamps();
         });
     }

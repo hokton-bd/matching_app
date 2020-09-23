@@ -39,6 +39,7 @@ class SignupController extends Controller
         $info = Login::find($login_id)->student;
         session(['login_id' => $login_id]);
         session(['name' => $student->name]);
+        session(['status' => 'S']);
 
         return redirect()->route('student/dashboard');
 
@@ -52,7 +53,6 @@ class SignupController extends Controller
 
         $login = new Login();
         $teacher = new Teacher();
-        $ts = new Teacher_subjects();
 
         $login->email = $request->email;
         $hash = Hash::make($request->password);
@@ -65,17 +65,12 @@ class SignupController extends Controller
         $teacher->name = $request->name;
         $teacher->login_id = $login_id;
         $teacher->grade = $request->grade;
+        $teacher->subject_id = $request->subject;
         $teacher->save();
-        
-        $teacher_id = $teacher->id;
-
-        $ts->teacher_id = $teacher_id;
-        $ts->subject_id = $request->teacher_subjects;
-
-        $ts->save();
 
         session(['login_id' => $login_id]);
         session(['name' => $teacher->name]);
+        session(['status' => 'T']);
 
         return redirect()->route('teacher/dashboard');
 

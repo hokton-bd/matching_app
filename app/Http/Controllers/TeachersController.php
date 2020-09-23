@@ -60,7 +60,6 @@ class TeachersController extends Controller
 
         return view('teacher.dashboard', ['coming_lectures' => $lectures]);
 
-
     }
 
     public function showProfile(Request $request) {

@@ -17,7 +17,9 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->string('name', 50);
             $table->integer('grade');
+            
             $table->foreignId('login_id')->constrained('logins');
+            $table->string('image', 300)->nullable()->default('user-dummy.png');
             $table->timestamps();
         });
     }
